@@ -13,7 +13,7 @@ struct Characters
     private var characters:[String] = []
     private var current:Int = 0
     
-    private let birthday:CustomDate = CustomDate(day:3, month:8, year:2019)
+    let birthday:CustomDate = CustomDate(day:3, month:8, year:2019)
     
     init()
     {

@@ -11,7 +11,7 @@ import Foundation
 struct CustomDate
 {
     
-    private var date:Date?
+    private (set) var date:Date?
     
     init(day:Int, month:Int, year:Int, hour:Int = 0, minute:Int = 0,
          timeZone:TimeZone = .current)
@@ -27,7 +27,6 @@ struct CustomDate
         let userCalandar = Calendar.current
         
         date = userCalandar.date(from: dateComponents)
-        
     }
     
     //as format creates a formatted String type.
@@ -43,8 +42,10 @@ struct CustomDate
         dateFormatter.dateFormat = format
         
         return dateFormatter.string(from: date)
-        
-        
-        
+    }
+    
+    func getDate() -> Date?
+    {
+        return date
     }
 }
